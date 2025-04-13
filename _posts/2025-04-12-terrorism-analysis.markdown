@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Terrorism Analysis" 
+title:  "Perpetual Emergency: How Israeli Security Doctrine Is Rewriting U.S. Civil Liberties" 
 date:   2025-04-12
 categories: [geopolitics, surveillance, civil-liberties]
 ---
