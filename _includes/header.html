@@ -3,31 +3,35 @@
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
       {{ site.title | escape }}
       <svg id="waveform-animation" width="60" height="20" viewBox="0 0 60 20" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="rgba(100, 100, 200, 0.8)" />
+            <stop offset="100%" stop-color="rgba(200, 100, 100, 0.8)" />
+          </linearGradient>
+        </defs>
         <style>
-          #noisy-wave, #sine-wave { fill: none; stroke-width: 1.5; }
-          #noisy-wave { stroke: rgba(100, 100, 200, 0.8); }
-          #sine-wave { stroke: rgba(200, 100, 100, 0.8); }
-          
-          @keyframes morphWave {
-            0% { d: path("M0,10 Q5,5 10,10 T20,12 T30,8 T40,13 T50,7 T60,10"); opacity: 1; }
-            100% { d: path("M0,10 Q7.5,5 15,10 T30,10 T45,10 T60,10"); opacity: 0.2; }
+          @keyframes wave {
+            0% { d: path("M0,10 Q5,5 10,10 T20,12 T30,8 T40,13 T50,7 T60,10"); }
+            50% { d: path("M0,10 Q7.5,5 15,10 T30,10 T45,10 T60,10"); }
+            100% { d: path("M0,10 Q5,15 10,10 T20,8 T30,12 T40,7 T50,13 T60,10"); }
           }
           
-          @keyframes sineWave {
-            0% { opacity: 0.2; }
-            100% { opacity: 1; }
+          #main-wave {
+            fill: none;
+            stroke: url(#wave-gradient);
+            stroke-width: 1.5;
+            animation: wave 5s ease-in-out infinite;
           }
           
-          #noisy-wave {
-            animation: morphWave 3s ease-in-out infinite alternate;
-          }
-          
-          #sine-wave {
-            animation: sineWave 3s ease-in-out infinite alternate;
+          #bg-sine {
+            fill: none;
+            stroke: rgba(200, 100, 100, 0.3);
+            stroke-width: 1;
+            stroke-dasharray: 2,1;
           }
         </style>
-        <path id="noisy-wave" d="M0,10 Q5,5 10,10 T20,12 T30,8 T40,13 T50,7 T60,10" />
-        <path id="sine-wave" d="M0,10 Q7.5,5 15,10 T30,10 T45,10 T60,10" />
+        <path id="bg-sine" d="M0,10 C10,5 20,15 30,10 C40,5 50,15 60,10" />
+        <path id="main-wave" d="M0,10 Q5,5 10,10 T20,12 T30,8 T40,13 T50,7 T60,10" />
       </svg>
     </a>
     <nav class="site-nav">
