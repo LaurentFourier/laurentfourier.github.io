@@ -1,6 +1,35 @@
 <header class="site-header">
   <div class="wrapper">
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
+      {{ site.title | escape }}
+      <svg id="waveform-animation" width="60" height="20" viewBox="0 0 60 20" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          #noisy-wave, #sine-wave { fill: none; stroke-width: 1.5; }
+          #noisy-wave { stroke: rgba(100, 100, 200, 0.8); }
+          #sine-wave { stroke: rgba(200, 100, 100, 0.8); }
+          
+          @keyframes morphWave {
+            0% { d: path("M0,10 Q5,5 10,10 T20,12 T30,8 T40,13 T50,7 T60,10"); opacity: 1; }
+            100% { d: path("M0,10 Q7.5,5 15,10 T30,10 T45,10 T60,10"); opacity: 0.2; }
+          }
+          
+          @keyframes sineWave {
+            0% { opacity: 0.2; }
+            100% { opacity: 1; }
+          }
+          
+          #noisy-wave {
+            animation: morphWave 3s ease-in-out infinite alternate;
+          }
+          
+          #sine-wave {
+            animation: sineWave 3s ease-in-out infinite alternate;
+          }
+        </style>
+        <path id="noisy-wave" d="M0,10 Q5,5 10,10 T20,12 T30,8 T40,13 T50,7 T60,10" />
+        <path id="sine-wave" d="M0,10 Q7.5,5 15,10 T30,10 T45,10 T60,10" />
+      </svg>
+    </a>
     <nav class="site-nav">
       <input type="checkbox" id="nav-trigger" class="nav-trigger" />
       <label for="nav-trigger">
