@@ -641,7 +641,7 @@ a:hover {
 }
 
 /* Dark mode support with AAA compliance */
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   body {
     --primary-color: #B8C5E2;     /* Light blue-slate for headings */
     --secondary-color: #D9E2F3;    /* Lighter version for strong contrast */
