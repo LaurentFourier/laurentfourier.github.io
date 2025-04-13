@@ -718,4 +718,83 @@ a:hover {
 .post-navigation .next-post {
   text-align: right;
   margin-left: auto;
+}
+
+/* Mobile typography adjustments */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  h2 {
+    font-size: 1.6em;
+  }
+  
+  h3 {
+    font-size: 1.3em;
+  }
+  
+  .site-title-large {
+    font-size: 2.4em;
+  }
+  
+  .site-description {
+    font-size: 1em;
+  }
+  
+  .post-content {
+    font-size: 1em;
+    padding: 1.5em;
+  }
+  
+  .post-title {
+    font-size: 2em;
+  }
+  
+  .post-list h3 {
+    font-size: 1.25em;
+  }
+  
+  .post-excerpt {
+    font-size: 0.9em;
+  }
+  
+  .post-list .post-meta {
+    font-size: 0.8em;
+  }
+  
+  .read-more-link {
+    font-size: 0.85em;
+  }
+}
+
+/* Even smaller screens */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .site-title-large {
+    font-size: 2.1em;
+  }
+  
+  .post-content {
+    padding: 1.2em;
+  }
+  
+  .intro-section {
+    padding: 2.5em 1.2em;
+  }
+  
+  .post-list {
+    gap: 20px;
+  }
+  
+  .post-list li {
+    padding: 20px;
+  }
 } 
