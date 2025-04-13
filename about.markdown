@@ -4,8 +4,6 @@ title: About
 permalink: /about/
 ---
 
-## About Laurent Fourier
-
 I’m **Laurent Fourier**—a writer, researcher, and perpetual question‑asker focused on the fault‑lines where politics, technology, and power collide.  
 This blog exists to track those intersections, highlight under‑reported stories, and push back against narratives that normalize authoritarianism.
 

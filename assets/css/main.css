@@ -438,6 +438,8 @@ a:hover {
 /* Home Page Styling */
 .home-content {
   padding: 0;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .intro-section {
@@ -447,6 +449,12 @@ a:hover {
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.intro-container {
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .site-title-large {
@@ -457,6 +465,7 @@ a:hover {
   margin: 0 0 0.5em;
   letter-spacing: -0.02em;
   line-height: 1.2;
+  word-break: break-word;
 }
 
 .site-description {
@@ -483,23 +492,44 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 30px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.post-list li {
+.post-item {
   background-color: white;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: transform 0.3s, box-shadow 0.3s;
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.post-list li:hover {
+.post-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
-.post-list .post-meta {
+.post-item-title {
+  margin: 0.5em 0 0.8em;
+  font-size: 1.4em;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+/* Fix for archive page */
+.archive-page .post-list li {
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.post-list .post-meta,
+.post-item .post-meta {
   font-family: var(--sans-font);
   font-size: 0.85em;
   color: var(--accent-color);
@@ -508,18 +538,21 @@ a:hover {
   border: none;
 }
 
-.post-list h3 {
+.post-list h3,
+.post-item-title {
   margin: 0.5em 0 0.8em;
   font-size: 1.4em;
   line-height: 1.3;
 }
 
-.post-list .post-link {
+.post-list .post-link,
+.post-item-title .post-link {
   color: var(--primary-color);
   text-decoration: none;
 }
 
-.post-list .post-link:hover {
+.post-list .post-link:hover,
+.post-item-title .post-link:hover {
   color: var(--accent-color);
 }
 
@@ -720,10 +753,15 @@ a:hover {
   margin-left: auto;
 }
 
-/* Mobile typography adjustments */
+/* Enhanced mobile styles to fix overflow issues */
 @media screen and (max-width: 768px) {
   body {
     font-size: 16px;
+  }
+  
+  .wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
   }
   
   h1 {
@@ -738,25 +776,54 @@ a:hover {
     font-size: 1.3em;
   }
   
+  .site-title {
+    font-size: 1.3em;
+  }
+  
   .site-title-large {
-    font-size: 2.4em;
+    font-size: 2.2em;
+    word-wrap: break-word;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   
   .site-description {
-    font-size: 1em;
+    font-size: 0.95em;
+    padding: 0 10px;
   }
   
   .post-content {
-    font-size: 1em;
+    font-size: 0.95em;
     padding: 1.5em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
   
   .post-title {
-    font-size: 2em;
+    font-size: 1.8em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  .post-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .post-list li {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
   }
   
   .post-list h3 {
     font-size: 1.25em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
   
   .post-excerpt {
@@ -770,6 +837,26 @@ a:hover {
   .read-more-link {
     font-size: 0.85em;
   }
+  
+  /* Fix table overflow on small screens */
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Ensure images don't overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Better padding for blockquotes */
+  blockquote {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
 }
 
 /* Even smaller screens */
@@ -778,23 +865,92 @@ a:hover {
     font-size: 15px;
   }
   
+  .wrapper {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
   .site-title-large {
-    font-size: 2.1em;
+    font-size: 1.9em;
+    padding: 0 5px;
+  }
+  
+  .intro-section {
+    padding: 2em 1em;
+    margin-bottom: 2em;
   }
   
   .post-content {
     padding: 1.2em;
   }
   
-  .intro-section {
-    padding: 2.5em 1.2em;
-  }
-  
   .post-list {
-    gap: 20px;
+    gap: 15px;
   }
   
   .post-list li {
-    padding: 20px;
+    padding: 15px;
+    margin-bottom: 0;
+  }
+  
+  .post-title {
+    font-size: 1.6em;
+  }
+  
+  .post-list h3 {
+    font-size: 1.15em;
+  }
+  
+  .table-of-contents {
+    padding: 1em;
+  }
+  
+  /* Fix navigation display */
+  .site-nav .page-link {
+    padding: 8px 0;
+  }
+  
+  /* Adjust footer */
+  .site-footer {
+    padding: 1.5em 0;
+  }
+  
+  /* Ensure all containers respect viewport width */
+  .page-content, .post-content, .home-content, .intro-section, 
+  .post-list, .post-list li, .post-excerpt, .site-description {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Ensure no content overflows on very small screens */
+@media screen and (max-width: 320px) {
+  .site-title-large {
+    font-size: 1.7em;
+  }
+  
+  .post-title {
+    font-size: 1.5em;
+  }
+  
+  h1 {
+    font-size: 1.7em;
+  }
+  
+  h2 {
+    font-size: 1.4em;
+  }
+  
+  .post-list h3 {
+    font-size: 1.1em;
+  }
+  
+  .wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .post-content {
+    padding: 1em;
   }
 } 
