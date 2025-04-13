@@ -1,0 +1,44 @@
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-content">
+      <div class="footer-col footer-col-1">
+        <h2 class="footer-heading">{{ site.title | escape }}</h2>
+        <p class="footer-description">{{ site.description | escape }}</p>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <h3 class="footer-heading">Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+          <li><a href="{{ '/archive/' | relative_url }}">Archive</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <h3 class="footer-heading">Connect</h3>
+        <ul class="social-media-list">
+          {% if site.github_username %}
+          <li>
+            <a href="https://github.com/{{ site.github_username }}">
+              <span class="username">GitHub: {{ site.github_username }}</span>
+            </a>
+          </li>
+          {% endif %}
+          
+          {% if site.email %}
+          <li>
+            <a href="mailto:{{ site.email }}">
+              <span class="username">Email: {{ site.email }}</span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title | escape }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer> 

@@ -1,0 +1,91 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <div class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%B %-d, %Y" -%}
+        {{ page.date | date: date_format }}
+      </time>
+      {%- if page.author -%}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      {%- endif -%}
+      
+      {% assign words = content | number_of_words %}
+      • {% if words < 360 %}1 min{% else %}{{ words | divided_by:180 }} min{% endif %} read
+      
+      {% if page.categories.size > 0 %}
+      <div class="post-categories">
+        <span>Filed under:</span>
+        {% for category in page.categories %}
+        <span class="post-category">{{ category }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if content contains "<h2" %}
+  <aside class="table-of-contents">
+    <h4>Table of Contents</h4>
+    <div class="toc-container">
+      {% assign headers = content | split: "<h2" %}
+      <ol>
+        {% for header in headers %}
+          {% if forloop.first %}{% else %}
+            {% assign header_text = header | split: "</h2>" | first | split: ">" | last | strip_html %}
+            <li><a href="#{{ header_text | slugify }}">{{ header_text }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </div>
+  </aside>
+  {% endif %}
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {% if content contains "<h2" %}
+      {% assign content_with_anchors = content %}
+      {% assign headers = content | split: "<h2" %}
+      {% for header in headers %}
+        {% if forloop.first %}{% else %}
+          {% assign header_text = header | split: "</h2>" | first | split: ">" | last | strip_html %}
+          {% assign header_anchor = header_text | slugify %}
+          {% assign header_with_id = '<h2 id="' | append: header_anchor | append: '"' %}
+          {% assign content_with_anchors = content_with_anchors | replace_first: '<h2', header_with_id %}
+        {% endif %}
+      {% endfor %}
+      {{ content_with_anchors }}
+    {% else %}
+      {{ content }}
+    {% endif %}
+  </div>
+
+  <hr>
+  
+  <!-- <div class="post-references">
+    {% if page.references %}
+    <h3>References and Citations</h3>
+    <ol class="references-list">
+      {% for reference in page.references %}
+      <li>{{ reference }}</li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+  </div> -->
+
+  <div class="post-footer">
+    <div class="post-navigation">
+      {% if page.previous.url %}
+      <a class="prev-post" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+      {% endif %}
+      {% if page.next.url %}
+      <a class="next-post" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article> 

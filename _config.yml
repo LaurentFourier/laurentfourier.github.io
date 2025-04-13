@@ -36,6 +36,9 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# Custom theme settings
+google_fonts: "Playfair+Display:400,400i,700,700i|Source+Sans+Pro:400,400i,600,700"
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
