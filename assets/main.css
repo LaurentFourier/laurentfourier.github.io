@@ -159,7 +159,7 @@
   @media screen and (max-width: 600px) {
     .site-header {
       height: auto;
-      min-height: var(--nav-height);
+      /* min-height: var(--nav-height); */
       padding: 10px 0;
     }
     
@@ -168,7 +168,7 @@
       align-items: flex-start;
       height: auto;
       position: relative;
-      padding-bottom: 10px;
+      /* padding-bottom: 10px; */
     }
     
     .site-title {
