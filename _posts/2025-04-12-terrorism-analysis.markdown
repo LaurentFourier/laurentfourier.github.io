@@ -3,9 +3,13 @@ layout: post
 title:  "Perpetual Emergency: How Israeli Security Doctrine Is Rewriting U.S. Civil Liberties" 
 date:   2025-04-12
 categories: [geopolitics, surveillance, civil-liberties]
+excerpt: "A deep investigation into how Israeli security doctrine, billionaire-funded networks, and surveillance technologies are reshaping U.S. civil liberties—creating a transnational system that criminalizes dissent and normalizes permanent emergency."
+
 ---
 
-The convergence of Israeli propaganda strategies, U.S. billionaire-funded political networks, and authoritarian policing tactics has created a feedback loop that is reshaping American democracy in dangerous ways. What began as a foreign lobbying effort to defend Israel’s global image has evolved into a transnational architecture of influence that erodes due process, criminalizes dissent, and normalizes a state of perpetual emergency.
+*The convergence of Israeli propaganda strategies, U.S. billionaire-funded political networks, and authoritarian policing tactics has created a feedback loop that is reshaping American democracy in dangerous ways. What began as a foreign lobbying effort to defend Israel’s global image has evolved into a transnational architecture of influence that erodes due process, criminalizes dissent, and normalizes a state of perpetual emergency.*
+
+---
 
 ## From Hasbara to Homeland Security
 

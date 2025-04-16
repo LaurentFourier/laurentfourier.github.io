@@ -6,6 +6,7 @@ author: Laurent Fourier
 date: 2025-04-12
 categories: [politics, ideology, democracy, civil liberties]
 tags: [conservatism, authoritarianism, psychology, democracy, radicalism, justice]
+excerpt: "A psychological, historical, and political dissection of conservatism as an authoritarian ideology rooted in control, cruelty, and anti-democratic impulses—tracing its tactics from policy to propaganda to cultural radicalization."
 ---
 
 

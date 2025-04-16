@@ -14,7 +14,7 @@
     --border-color: #CFD8E3;
     --quote-bg: #F5F7FA;           /* Slightly off-white for quotes */
     --header-bg: white;
-    --nav-height: 70px;
+    --nav-height: px;
     --button-text: white;          /* High contrast text for buttons */
     --button-bg: #5E3B73;          /* Accessibility-compliant purple */
     --button-hover: #4A2E5A;       /* Darker purple for hover state */
