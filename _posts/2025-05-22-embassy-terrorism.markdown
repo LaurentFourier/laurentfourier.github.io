@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Despair Weaponized: On Violence, Palestine, and the End of the Road"
+title: "On Violence, Palestine, and the End of the Road"
 date: 2025-05-22
 categories: [philosophy, palestine, ethics]
 excerpt: >
