@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "This Is Not a Drill: Exposing the Engineered Coup—and Your Civic Duty to Stop It"
+title: "Exposing the Engineered Coup—and Your Civic Duty to Stop It"
 date: 2025-05-20
 categories: [democracy, civil-liberties, general-strike]
 excerpt: >
