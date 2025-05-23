@@ -9,9 +9,6 @@ excerpt: >
   nationwide call for a general strike before the window for resistance slams shut.
 ---
 
-THIS IS NOT A DRILL
-===================
-
 We are under siege, and the assault was designed to be nearly invisible. Billion-dollar think-tanks, foreign agents, and corporate fronts now write public opinion, cast paid “citizens” to astroturf, and schedule midnight votes they alone know are coming—all so the hijacking looks inevitable instead of orchestrated. Every viral outrage, every avalanche of fake “science,” every lawsuit timed to land before a hand-picked court or public hearing is a choreographed strike on the foundations of democracy. **None of this is organic.** It is financed, rehearsed, and rolling out at a speed meant to overwhelm us into silence. The liberal establishment will not save us; it is too busy cashing checks from the very billionaires driving this coup while pretending to resist, while fascists sprint through the breach with chainsaws. **This is the last clear moment before the lights go out.**
 
 ---
