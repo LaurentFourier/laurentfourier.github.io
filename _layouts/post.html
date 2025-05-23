@@ -28,53 +28,11 @@ layout: default
     </div>
   </header>
 
-  {% if content contains "<h2" %}
-  <aside class="table-of-contents">
-    <h4>Table of Contents</h4>
-    <div class="toc-container">
-      {% assign headers = content | split: "<h2" %}
-      <ol>
-        {% for header in headers %}
-          {% if forloop.first %}{% else %}
-            {% assign header_text = header | split: "</h2>" | first | split: ">" | last | strip_html %}
-            <li><a href="#{{ header_text | slugify }}">{{ header_text }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ol>
-    </div>
-  </aside>
-  {% endif %}
-
   <div class="post-content e-content" itemprop="articleBody">
-    {% if content contains "<h2" %}
-      {% assign content_with_anchors = content %}
-      {% assign headers = content | split: "<h2" %}
-      {% for header in headers %}
-        {% if forloop.first %}{% else %}
-          {% assign header_text = header | split: "</h2>" | first | split: ">" | last | strip_html %}
-          {% assign header_anchor = header_text | slugify %}
-          {% assign header_with_id = '<h2 id="' | append: header_anchor | append: '"' %}
-          {% assign content_with_anchors = content_with_anchors | replace_first: '<h2', header_with_id %}
-        {% endif %}
-      {% endfor %}
-      {{ content_with_anchors }}
-    {% else %}
-      {{ content }}
-    {% endif %}
+    {{ content }}
   </div>
 
   <hr>
-  
-  <!-- <div class="post-references">
-    {% if page.references %}
-    <h3>References and Citations</h3>
-    <ol class="references-list">
-      {% for reference in page.references %}
-      <li>{{ reference }}</li>
-      {% endfor %}
-    </ol>
-    {% endif %}
-  </div> -->
 
   <div class="post-footer">
     <div class="post-navigation">
