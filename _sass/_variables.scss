@@ -1,0 +1,125 @@
+// ===================================
+// Core Design Tokens: Purple Sunset Glow
+// Seed: Purples and Sunsets
+// ===================================
+
+// --- Colors: Evoking a sunset over a majestic purple landscape ---
+
+// Base & Backgrounds
+$color-background-deep: #1A0F2F;      // Deep indigo/midnight purple (night sky)
+$color-background-medium: #2C1B4D;    // Richer, slightly lighter purple (twilight)
+$color-background-card: #3A2A63;      // Softer purple for cards/elevated surfaces
+$color-background-overlay: rgba($color-background-deep, 0.7); // For translucent overlays
+
+// Text
+$color-text-primary: #F5F0FF;        // Very light lavender/off-white (high contrast)
+$color-text-secondary: #BDAFE0;      // Muted lavender/gray (for less emphasis)
+$color-text-subtle: #8A7DAE;         // Softer gray-purple (for hints, disabled)
+$color-text-tertiary: #6A5F8E;       // Even more subtle for fine print, copyright
+
+// Primary Purples (Core Brand)
+$color-purple-vibrant: #7B3FF2;      // Vibrant, energetic purple (primary accent)
+$color-purple-deep: #5A29AA;        // Deeper, more serious purple
+$color-purple-light: #A47DFF;       // Lighter, airy purple (hovers, secondary accents)
+
+// Sunset Accents (Highlights, CTAs)
+$color-sunset-orange: #FF8C42;       // Bright, warm orange
+$color-sunset-amber: #FFB000;        // Rich, golden amber
+$color-sunset-magenta: #E83E8C;       // Deep pink/magenta touch
+$color-sunset-gradient: linear-gradient(135deg, $color-sunset-orange 0%, $color-sunset-amber 50%, $color-sunset-magenta 100%);
+
+// Utility & Status
+$color-border: #4E3A7D;             // Subtle border color related to purples
+$color-success: #28A745;            // Standard success green (adjust if theme needs it)
+$color-error: #DC3545;              // Standard error red
+$color-warning: #FFC107;            // Standard warning yellow
+
+// --- Typography: Modern, Elegant, Readable ---
+$font-family-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-serif: "Playfair Display", Georgia, "Times New Roman", serif; // For display/headings if desired
+$font-family-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+$font-size-base: 1rem;              // Typically 16px
+$font-size-sm: 0.875rem;            // 14px
+$font-size-lg: 1.125rem;            // 18px
+$font-size-xl: 1.25rem;             // 20px
+$font-size-xs: 0.75rem;             // Approx 12px
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$line-height-base: 1.6;
+$line-height-heading: 1.3;
+
+// Headings (can be customized further in _base.scss or _components.scss)
+$font-size-h1: 2.5rem;    // 40px
+$font-size-h2: 2rem;      // 32px
+$font-size-h3: 1.75rem;   // 28px
+$font-size-h4: 1.5rem;    // 24px
+$font-size-h5: 1.25rem;   // 20px
+$font-size-h6: 1rem;      // 16px
+
+// --- Spacing: Consistent & Rhythmic ---
+// Base unit can be adjusted, e.g., 0.25rem (4px) or 0.5rem (8px)
+$spacing-unit-xs: 0.25rem;  // 4px
+$spacing-unit-sm: 0.5rem;   // 8px
+$spacing-unit-md: 1rem;     // 16px (base for many margins/paddings)
+$spacing-unit-lg: 1.5rem;   // 24px
+$spacing-unit-xl: 2rem;     // 32px
+$spacing-unit-xxl: 3rem;    // 48px
+$spacing-unit-xxxl: 4rem;   // 64px
+
+// --- Layout & Grid ---
+$container-max-width: 1280px;      // Max width for main content container
+$container-padding-x: $spacing-unit-lg;
+
+// --- Borders & Shadows ---
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+
+$box-shadow-sm: 0 2px 4px rgba($color-background-deep, 0.2);
+$box-shadow-md: 0 4px 12px rgba($color-background-deep, 0.25);
+$box-shadow-lg: 0 8px 24px rgba($color-background-deep, 0.3);
+$box-shadow-glow-accent: 0 0 16px rgba($color-sunset-amber, 0.5);
+
+// --- Transitions ---
+$transition-duration-fast: 0.15s;
+$transition-duration-base: 0.3s;
+$transition-timing-function: ease-in-out;
+
+// --- Breakpoints: For Responsive Design ---
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;   // Small devices (landscape phones)
+$breakpoint-md: 768px;   // Medium devices (tablets)
+$breakpoint-lg: 992px;   // Large devices (desktops)
+$breakpoint-xl: 1200px;  // Extra large devices (large desktops)
+$breakpoint-xxl: 1400px; // Wider screens
+
+// ===================================
+// Core Design Tokens
+// Designer: Please populate with initial design system values.
+// Example: $primary-color: #333;
+// ===================================
+
+// Colors
+// $primary-color: ...
+// $accent-color: ...
+// $text-color: ...
+// $background-color: ...
+
+// Typography
+// $font-family-primary: "Your Font Name", sans-serif;
+// $font-size-base: 1rem;
+
+// Spacing
+// $spacing-unit: 1rem;
+
+// Breakpoints
+// $breakpoint-sm: 576px;
+// $breakpoint-md: 768px;
+// $breakpoint-lg: 992px;
+// $breakpoint-xl: 1200px; 

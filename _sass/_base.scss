@@ -1,0 +1,117 @@
+// ===================================
+// Base & Typography
+// HTML element defaults and base typography using Purple Sunset Glow theme.
+// ===================================
+
+*, 
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $font-size-base; // Establishes the root font size for rem units
+  -webkit-text-size-adjust: 100%; // Prevent font scaling in landscape
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-sans;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  color: $color-text-primary;
+  background-color: $color-background-deep;
+  line-height: $line-height-base;
+  min-height: 100vh;
+  display: flex; // Helps with sticky footer if needed
+  flex-direction: column; // Helps with sticky footer if needed
+}
+
+// Links
+a {
+  color: $color-sunset-orange; // Using a warm accent for links
+  text-decoration: none;
+  transition: color $transition-duration-fast $transition-timing-function;
+
+  &:hover,
+  &:focus {
+    color: $color-sunset-amber; // Brighter on hover/focus
+    text-decoration: underline;
+  }
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-serif; // Using serif for a more editorial/dramatic heading style
+  font-weight: $font-weight-bold;
+  line-height: $line-height-heading;
+  color: $color-text-primary; // Or a specific heading color if defined, e.g., $color-purple-light
+  margin-top: $spacing-unit-lg;
+  margin-bottom: $spacing-unit-md;
+}
+
+h1 { font-size: $font-size-h1; }
+h2 { font-size: $font-size-h2; }
+h3 { font-size: $font-size-h3; }
+h4 { font-size: $font-size-h4; }
+h5 { font-size: $font-size-h5; }
+h6 { font-size: $font-size-h6; }
+
+// Paragraphs
+p {
+  margin-bottom: $spacing-unit-md;
+}
+
+// Images & SVGs
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block; 
+}
+
+// Horizontal Rule - styled with a sunset accent
+hr {
+  border: 0;
+  height: 2px;
+  background-image: $color-sunset-gradient;
+  margin: $spacing-unit-xxl 0;
+}
+
+// Basic selection color
+::selection {
+  background-color: rgba($color-purple-vibrant, 0.7);
+  color: $color-text-primary;
+}
+
+// Remove default list styles (can be re-added component-specifically)
+ul,
+ol {
+  list-style: none;
+}
+
+// Code blocks and inline code
+code,
+pre {
+  font-family: $font-family-mono;
+  font-size: $font-size-sm;
+  background-color: $color-background-medium; // Slightly lighter purple for code backgrounds
+  border-radius: $border-radius-sm;
+}
+
+code { // Inline code
+  padding: $spacing-unit-xs $spacing-unit-sm;
+  color: $color-sunset-magenta; // Accent for inline code text
+}
+
+pre { // Code blocks
+  padding: $spacing-unit-md;
+  overflow-x: auto;
+  margin-bottom: $spacing-unit-md;
+  border: 1px solid $color-border;
+  color: $color-text-secondary;
+} 

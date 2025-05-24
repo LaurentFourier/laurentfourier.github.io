@@ -1,0 +1,311 @@
+// ===================================
+// Layout Systems: Purple Sunset Glow
+// Structural styling for containers, header, footer, main content.
+// ===================================
+
+// --- Main Site Wrapper ---
+// This can be applied to a top-level div in default.html if needed,
+// or body itself can act as the flex container for sticky footer.
+
+// --- Site Header ---
+.site-header {
+  background-color: $color-background-medium; // Slightly lighter purple for distinction
+  padding: $spacing-unit-md 0; // Remove horizontal padding here
+  border-bottom: 1px solid $color-border; // Slimmer border
+  box-shadow: $box-shadow-md; // Slightly more pronounced shadow
+  position: sticky; // Sticky header
+  top: 0;
+  z-index: 1000;
+  transition: background-color $transition-duration-base $transition-timing-function; // Smooth scroll/bg change
+
+  // Potential effect on scroll (requires JS or specific classes)
+  // &.scrolled {
+  //   background-color: rgba($color-background-deep, 0.85);
+  //   backdrop-filter: blur(10px);
+  // }
+
+  .header-content {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding-left: $container-padding-x; // Add horizontal padding here
+    padding-right: $container-padding-x; // Add horizontal padding here
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px; // Ensure a minimum height
+  }
+
+  .site-branding { // New wrapper for title and animation
+    display: flex;
+    align-items: center;
+    gap: $spacing-unit-md; // Space between title and animation
+  }
+
+  .site-title {
+    font-family: $font-family-serif;
+    font-size: $font-size-h4; // Slightly larger title
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: color $transition-duration-fast $transition-timing-function, transform $transition-duration-fast $transition-timing-function;
+
+    &:hover,
+    &:focus {
+      color: $color-purple-light;
+      text-decoration: none;
+      transform: scale(1.03); // Subtle scale effect
+    }
+  }
+
+  .site-nav {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center; // Align items vertically
+    }
+
+    li {
+      margin-left: $spacing-unit-lg;
+      &:first-child {
+        margin-left: 0; // No margin for the first item if nav is left-aligned
+      }
+    }
+
+    a {
+      font-family: $font-family-sans;
+      font-size: $font-size-base;
+      font-weight: $font-weight-medium;
+      color: $color-text-secondary;
+      text-decoration: none;
+      padding: $spacing-unit-sm $spacing-unit-md; // Increased padding for better click targets
+      border-radius: $border-radius-sm; // Rounded corners for links
+      position: relative;
+      transition: color $transition-duration-base $transition-timing-function, 
+                  background-color $transition-duration-base $transition-timing-function;
+
+      &::after { // Underline effect container
+        content: '';
+        position: absolute;
+        bottom: 4px; // Position underline slightly above bottom
+        left: $spacing-unit-md;
+        right: $spacing-unit-md;
+        height: 2px;
+        background-image: $color-sunset-gradient;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform $transition-duration-base $transition-timing-function;
+      }
+
+      &:hover,
+      &:focus {
+        color: $color-text-primary;
+        background-color: rgba($color-purple-light, 0.1); // Subtle background on hover
+        text-decoration: none;
+        &::after {
+          transform: scaleX(1); // Expand underline on hover
+        }
+      }
+
+      // Active state styling - assuming a class like 'active' is added via JS or Liquid
+      // This would typically be added to the link of the current page.
+      &.active {
+        color: $color-text-primary;
+        font-weight: $font-weight-semibold;
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  // Mobile nav adjustments might be needed if the animation takes up too much space
+  .spectrum-animation-container {
+    // SVG itself defines its dimensions (80x30 in this case)
+    // We can add alignment or minor adjustments if needed.
+    display: flex; // Helps with vertical alignment if SVG has extra space
+    align-items: center;
+  }
+}
+
+// --- Main Content Area ---
+.main-content {
+  flex-grow: 1; // Ensures it takes up available space for sticky footer
+  padding-top: $spacing-unit-xl;
+  padding-bottom: $spacing-unit-xl;
+
+  // Default container for content within main
+  .container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding-left: $container-padding-x;
+    padding-right: $container-padding-x;
+  }
+}
+
+// --- Site Footer ---
+.site-footer {
+  background-color: $color-background-medium; // Consistent with header
+  padding: $spacing-unit-xl $container-padding-x;
+  border-top: 1px solid $color-border; // Slimmer border
+  color: $color-text-secondary;
+  text-align: center;
+  font-size: $font-size-sm;
+  margin-top: auto; // Pushes footer to bottom if content is short (needs body as flex container)
+
+  .footer-content {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-unit-lg;
+  }
+
+  .footer-links-container {
+    display: flex;
+    flex-wrap: wrap; // Allow wrapping on smaller screens
+    justify-content: center;
+    gap: $spacing-unit-lg $spacing-unit-xl; // Row and column gap
+    margin-bottom: $spacing-unit-md;
+  }
+
+  ul.footer-links, ul.footer-social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-unit-md $spacing-unit-lg; // Row and column gap for links
+
+    li {
+      // No specific li styles needed unless for alignment/spacing issues
+    }
+
+    a {
+      color: $color-text-secondary; // Subtler than default footer links
+      text-decoration: none;
+      transition: color $transition-duration-fast $transition-timing-function;
+
+      &:hover,
+      &:focus {
+        color: $color-sunset-orange;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  ul.footer-social-links {
+    // Specific styles if social links need to differ significantly
+    // e.g., icons instead of text, different hover effects
+    a {
+      // Example: could add icons here via ::before pseudo-elements + icon font/SVG
+    }
+  }
+
+  .copyright {
+    font-size: $font-size-xs;
+    color: $color-text-tertiary; // Even more subtle for copyright
+    width: 100%; // Ensure it takes full width for text-align center to work well
+  }
+}
+
+// --- Responsive Considerations (Basic Example) ---
+// More detailed responsive styles will be added as design progresses.
+@media (max-width: $breakpoint-md) {
+  .site-header {
+    padding-left: $spacing-unit-md; // Adjust padding for mobile
+    padding-right: $spacing-unit-md;
+    .header-content {
+      flex-direction: row; // Keep it row for title and potential burger
+      justify-content: space-between; // Title left, burger right
+    }
+
+    .site-title {
+      margin-bottom: 0; // No margin if in row
+      font-size: $font-size-lg; // Adjust title size for mobile
+    }
+
+    // Basic Mobile Navigation: Links will wrap or need a burger menu.
+    // For now, we'll hide the nav and assume a burger menu would reveal it.
+    // This requires JS for a real burger menu.
+    .site-nav {
+      // Example: Basic stacking if burger is not implemented yet
+      // display: none; // Hide for a burger menu approach
+      position: absolute; // Example for a dropdown menu
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: $color-background-medium;
+      padding: $spacing-unit-md 0;
+      box-shadow: $box-shadow-md;
+      transform: translateY(-200%); // Initially hidden
+      transition: transform $transition-duration-base $transition-timing-function;
+      z-index: -1; // Below header until active
+
+      &.nav-open { // Class to toggle visibility with JS
+        transform: translateY(0);
+        z-index: 999;
+      }
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+      li {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+      }
+      a {
+        display: block; // Make links full width
+        padding: $spacing-unit-md;
+        border-radius: 0;
+        &::after { // Remove underline for mobile stacked links or style differently
+          display: none;
+        }
+        &:hover,
+        &:focus {
+          background-color: rgba($color-purple-vibrant, 0.2);
+        }
+      }
+    }
+  }
+
+  .main-content {
+    padding-top: $spacing-unit-lg;
+    padding-bottom: $spacing-unit-lg;
+  }
+
+  .site-footer {
+    padding-top: $spacing-unit-lg;
+    padding-bottom: $spacing-unit-lg;
+  }
+}
+
+// Example container (designer to provide specifics)
+// .container {
+//   width: 90%;
+//   max-width: 1100px; // Or use $breakpoint-lg from variables
+//   margin-left: auto;
+//   margin-right: auto;
+//   padding-left: $spacing-unit;
+//   padding-right: $spacing-unit;
+// }
+
+// Example header (designer to provide specifics)
+// .site-header {
+//   padding: $spacing-unit 0;
+//   // ... more styles
+// }
+
+// Example footer (designer to provide specifics)
+// .site-footer {
+//   padding: ($spacing-unit * 2) 0;
+//   margin-top: ($spacing-unit * 2);
+//   // ... more styles
+// } 

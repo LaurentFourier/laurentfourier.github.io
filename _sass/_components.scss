@@ -1,0 +1,275 @@
+// ===================================
+// Reusable Components: Purple Sunset Glow
+// Styling for buttons, cards, forms, etc.
+// ===================================
+
+// --- Buttons ---
+.btn {
+  display: inline-block;
+  font-family: $font-family-sans;
+  font-weight: $font-weight-semibold;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: $spacing-unit-sm $spacing-unit-lg; // Generous padding
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  border-radius: $border-radius-md; // Consistent rounded corners
+  transition: all $transition-duration-fast $transition-timing-function;
+  text-decoration: none; // Ensure no underline from browser defaults
+
+  &:hover,
+  &:focus {
+    text-decoration: none; // Ensure no underline on hover
+    opacity: 0.9; // Slight fade for interaction
+    transform: translateY(-1px); // Subtle lift
+    box-shadow: $box-shadow-sm;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: $box-shadow-sm, 0 0 0 0.2rem rgba($color-purple-light, 0.5); // Focus ring
+  }
+
+  &:active {
+    transform: translateY(0); // Reset lift on click
+    box-shadow: none;
+  }
+}
+
+// Primary Button (Sunset Accent)
+.btn-primary {
+  color: $color-text-primary; // Or a very dark purple for contrast on gradient
+  background-image: $color-sunset-gradient;
+  border-color: transparent;
+  box-shadow: $box-shadow-md; // More prominent shadow
+
+  &:hover,
+  &:focus {
+    color: $color-text-primary;
+    // For gradients, direct color change on hover is tricky. 
+    // We rely on opacity, transform, and potentially a slightly darker gradient or overlay if needed.
+    // Or, change border: border: 2px solid $color-sunset-orange;
+    box-shadow: $box-shadow-lg, $box-shadow-glow-accent;
+  }
+}
+
+// Secondary Button (Purple Core)
+.btn-secondary {
+  color: $color-text-primary;
+  background-color: $color-purple-vibrant;
+  border-color: $color-purple-vibrant;
+
+  &:hover,
+  &:focus {
+    color: $color-text-primary;
+    background-color: $color-purple-deep;
+    border-color: $color-purple-deep;
+  }
+}
+
+// Outline Button (Subtle Purple)
+.btn-outline-purple {
+  color: $color-purple-light;
+  background-color: transparent;
+  border-color: $color-purple-light;
+
+  &:hover,
+  &:focus {
+    color: $color-text-primary;
+    background-color: $color-purple-light;
+    border-color: $color-purple-light;
+  }
+}
+
+// Outline Button (Sunset Accent)
+.btn-outline-sunset {
+  color: $color-sunset-orange;
+  background-color: transparent;
+  border-color: $color-sunset-orange;
+
+  &:hover,
+  &:focus {
+    color: $color-background-deep; // Dark text for contrast on sunset bg
+    background-color: $color-sunset-orange;
+    border-color: $color-sunset-orange;
+  }
+}
+
+// Text Button (Minimal)
+.btn-text {
+  background-color: transparent;
+  border-color: transparent;
+  color: $color-purple-light;
+  padding-left: $spacing-unit-xs;
+  padding-right: $spacing-unit-xs;
+
+  &:hover,
+  &:focus {
+    color: $color-sunset-orange;
+    background-color: rgba($color-purple-light, 0.1);
+    transform: none; // No lift for text buttons typically
+    box-shadow: none;
+  }
+}
+
+// Example card (designer to provide specifics) - Placeholder from previous step
+// .card {
+//   background-color: white; // Assuming a light theme for now
+//   padding: $spacing-unit;
+//   border-radius: 6px;
+//   // box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+//   // ... more styles
+// } 
+
+// --- Cards / Post Items ---
+.card, .post-item-container { // General card class, and a specific one for post items if needed
+  background-color: $color-background-card;
+  border-radius: $border-radius-lg; // Softer, larger radius
+  padding: $spacing-unit-lg;
+  box-shadow: $box-shadow-md;
+  transition: transform $transition-duration-base $transition-timing-function, 
+              box-shadow $transition-duration-base $transition-timing-function;
+  overflow: hidden; // Ensures content respects border-radius
+  display: flex;
+  flex-direction: column;
+  height: 100%; // For consistent height in a grid if parent is a grid item
+
+  &:hover {
+    transform: translateY(-$spacing-unit-xs); // Subtle lift
+    box-shadow: $box-shadow-lg; // More pronounced shadow on hover
+  }
+}
+
+.post-list {
+  display: grid;
+  gap: $spacing-unit-xl;
+  // Responsive grid columns (adjust minmax as needed for content)
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+
+  // The article/card itself within the list
+  .post {
+    @extend .card; // Inherit base card styles
+    // No specific .post styles needed if .card is sufficient and HTML uses .card
+    // Otherwise, override or add specific .post styles here.
+  }
+}
+
+.post-header {
+  margin-bottom: $spacing-unit-md;
+}
+
+.post-title {
+  font-family: $font-family-serif;
+  font-size: $font-size-h4;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-unit-sm; // Tighter margin below title
+
+  a {
+    color: inherit; // Inherit color from parent (.post-title)
+    text-decoration: none;
+    transition: color $transition-duration-fast $transition-timing-function;
+
+    &:hover,
+    &:focus {
+      color: $color-sunset-orange; // Sunset orange for title hover
+      text-decoration: none;
+    }
+  }
+}
+
+.post-meta {
+  font-family: $font-family-sans;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-unit-md;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-unit-md;
+
+  span { // General styling for meta items
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .post-date {
+    // Specific styling if needed, e.g., icon
+  }
+
+  .post-category {
+    background-color: rgba($color-purple-vibrant, 0.2);
+    color: $color-purple-light;
+    padding: $spacing-unit-xs $spacing-unit-sm;
+    border-radius: $border-radius-sm;
+    font-weight: $font-weight-medium;
+  }
+
+  .read-time {
+    // Specific styling if needed
+  }
+}
+
+.post-excerpt {
+  font-family: $font-family-sans;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-unit-lg;
+  flex-grow: 1; // Allows excerpt to take available space in flex column card
+
+  p {
+    margin-bottom: 0; // Remove default p margin if excerpt is single p
+  }
+}
+
+// Assuming .read-more on home page cards is a button
+// If it's just a link, it will inherit link styles from _base.scss
+// If it needs button styling, apply .btn and a .btn-* class in HTML
+
+// Styling for individual post pages (not cards)
+.single-post-content {
+  // Styles specific to the full article page content
+  h1, h2, h3, h4, h5, h6 {
+    // Potentially different margins or styles than card titles
+  }
+
+  p, ul, ol, blockquote {
+    // Ensure comfortable reading width
+    max-width: 75ch; // Optimal character count per line for readability
+  }
+
+  img {
+    border-radius: $border-radius-md;
+    margin-top: $spacing-unit-lg;
+    margin-bottom: $spacing-unit-lg;
+    box-shadow: $box-shadow-sm;
+  }
+
+  blockquote {
+    border-left: 4px solid $color-purple-vibrant;
+    padding: $spacing-unit-md $spacing-unit-lg;
+    margin: $spacing-unit-lg 0;
+    background-color: rgba($color-background-medium, 0.5);
+    border-radius: 0 $border-radius-md $border-radius-md 0;
+    font-style: italic;
+    color: $color-text-secondary;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+// ... placeholder for other components like forms etc. ... 

@@ -2,32 +2,47 @@
 layout: default
 ---
 
-<div class="home-content">
-  <div class="intro-section">
-    <div class="intro-container">
-      <h1 class="site-title-large">{{ site.title }}</h1>
-      <div class="site-description">{{ site.description }}</div>
-    </div>
-  </div>
+<div class="hero-section">
+  <h1 class="hero-title">{{ site.title }}</h1>
+  <p class="hero-subtitle">{{ site.description }}</p>
+  <a href="#latest-posts" class="hero-cta">Explore Analysis →</a>
+</div>
 
-  {%- if site.posts.size > 0 -%}
-  <h2 class="post-list-heading">Latest Articles</h2>
-  <ul class="post-list">
-    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-    {%- for post in site.posts -%}
-    <li class="post-item">
-      <span class="post-meta">{{ post.date | date: date_format }}</span>
-      <h3 class="post-item-title">
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-        </a>
-      </h3>
-      <div class="post-excerpt">
-        {{ post.excerpt }}
-      </div>
-      <a href="{{ post.url | relative_url }}" class="read-more-link">Continue Reading →</a>
-    </li>
-    {%- endfor -%}
-  </ul>
-  {%- endif -%}
+<div class="page-wrapper">
+  <div class="content-area">
+    {%- if site.posts.size > 0 -%}
+    <h2 id="latest-posts">Latest Analysis</h2>
+    <div class="post-list">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {%- for post in site.posts limit: 6 -%}
+      <article class="post {% if forloop.first %}post-featured{% endif %}">
+        <header class="post-header">
+          <h3 class="post-title">
+            <a href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h3>
+          <div class="post-meta">
+            <span class="post-date">{{ post.date | date: date_format }}</span>
+            <span class="post-category">Analysis</span>
+            <span class="read-time">{{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+          </div>
+        </header>
+        
+        <div class="post-excerpt">
+          {{ post.excerpt | strip_html | truncatewords: 40 }}
+        </div>
+        
+        <a href="{{ post.url | relative_url }}" class="read-more">Read Full Analysis</a>
+      </article>
+      {%- endfor -%}
+    </div>
+    
+    {%- if site.posts.size > 6 -%}
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="{{ site.baseurl }}/archive/" class="hero-cta">View All Articles →</a>
+    </div>
+    {%- endif -%}
+    {%- endif -%}
+  </div>
 </div>
