@@ -36,6 +36,7 @@ theme: null # Explicitly set no theme
 # theme: minima # This line was previously commented out
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 # Custom theme settings
 google_fonts: "Inter:400,500,600,700|JetBrains+Mono:400,500|Newsreader:400,400i,600,600i"
