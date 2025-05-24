@@ -32,7 +32,8 @@ url: "https://laurentfourier.github.io" # the base hostname & protocol for your 
 github_username:  LaurentFourier
 
 # Build settings
-# theme: minima
+theme: null # Explicitly set no theme
+# theme: minima # This line was previously commented out
 plugins:
   - jekyll-feed
 
