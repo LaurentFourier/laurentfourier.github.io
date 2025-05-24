@@ -27,12 +27,12 @@ description: >- # this means to ignore newlines until "baseurl:"
   signal from noise. These essays are crafted as legal-style briefs against
   the normalization of authoritarianism in a post-truth world.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://laurentfourier.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  LaurentFourier
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
 
