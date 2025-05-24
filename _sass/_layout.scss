@@ -213,8 +213,39 @@
   }
 }
 
+// --- Page specific layout (used by _layouts/page.html) ---
+.page-content {
+  // Basic padding, can be expanded
+  padding-top: $spacing-unit-lg;
+  padding-bottom: $spacing-unit-xl;
+}
+
+.page-header {
+  margin-bottom: $spacing-unit-xl;
+  text-align: center; // Center page titles by default
+}
+
+.page-title {
+  font-family: $font-family-serif;
+  font-size: $font-size-h1; // Use H1 size for page titles
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  // No text-decoration for titles typically
+}
+
+.entry-content {
+  // Styles for the main content area of a page
+  // This ensures that content within .page-content also respects readability constraints if needed
+  p, ul, ol, blockquote, table, pre {
+    max-width: 75ch; // Optimal character count per line for readability
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // Add more specific styling for elements within .entry-content as needed
+}
+
 // --- Responsive Considerations (Basic Example) ---
-// More detailed responsive styles will be added as design progresses.
 @media (max-width: $breakpoint-md) {
   .site-header {
     padding-left: $spacing-unit-md; // Adjust padding for mobile
