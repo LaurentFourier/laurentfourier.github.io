@@ -82,7 +82,7 @@ Modern textual analysis supports this shift:
 - **Style:** The Synoptics use Aramaic idioms, parables, and apocalyptic moral language. John uses abstract Greek dualism—light vs. darkness, truth vs. falsehood.  
 - **Content:** John omits parables, exorcisms, and most concrete events. Jesus speaks in long theological monologues instead of brief sayings.  
   → Indicates reinterpretation for a new audience, not firsthand recollection.  
-- **Sources:** The Synoptics share overlapping phrasing, implying common written sources (“Mark” + “Q”). John’s near-total independence suggests a later theological reworking.  
+- **Sources:** The Synoptics share overlapping phrasing, implying common written sources. John’s near-total independence suggests a later theological reworking.  
 
 Most historians—**Bart Ehrman**, **Paula Fredriksen**, **E.P. Sanders**, **Geza Vermes**, among others—agree that the **Synoptic Jesus** is closer to the historical teacher: moral, apocalyptic, and ethical.  
 The **Johannine Jesus** is a later theological invention—cosmic and metaphysical.  
@@ -98,3 +98,4 @@ Over time, institutional Christianity widened that gate with comforting doctrine
 But if we return to his words, stripped of centuries of revision, Jesus’s challenge remains:  
 
 **Enter by the narrow way—live truthfully, love justly, and let deeds, not dogma, define faith.**
+
